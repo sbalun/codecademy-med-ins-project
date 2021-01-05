@@ -1,7 +1,12 @@
 # Python Strings - Medical Insurance Project
 #
-# The string medical_data stores the medical records for ten individuals. Each record is separated by a ; 
-# and contains the name, age, BMI (body mass index), and insurance cost for an individual, in that order.
+# In this project, you used Python strings to transform and clean up medical data.
+# As a data scientist, it’s important that you have clean and accurate data before you analyze it. 
+# The following exercises will demonstrate the data preparation process.
+#
+# The string 'medical_data' stores the medical records for ten individuals. 
+# Each record is separated by a ; and contains the name, age, BMI, and 
+# insurance cost for an individual, in that order.
 
 medical_data = \
 """Marina Allison   ,27   ,   31.1 , 
@@ -23,9 +28,14 @@ print(medical_data + '\n')
 # Replace all instances of # in medical_data with $. Store the result in a variable called updated_medical_data.
 updated_medical_data = medical_data.replace("#","$")
 
+# Print updated_medical_data
 print(updated_medical_data)
 
+# Create a variable called num_records and initalize it to 0
 num_records = 0
+
+# Write a for loop to iterate through the updated_medical_data string. 
+# Inside of the loop, add 1 to num_records when the current character is equal to $
 
 for character in updated_medical_data:
   if character == "$":
@@ -104,3 +114,8 @@ print(names, ages, bmis, insurance_costs)
 total_bmi = 0
 
 # Use a for loop to iterate through bmis and add each bmi to total_bmi.  Convert bmi to a float
+for bmi in bmis:
+    total_bmi += float(bmi)
+
+average_bmi = total_bmi / len(bmis)
+print("\nAverage BMI: {}".format(average_bmi))
