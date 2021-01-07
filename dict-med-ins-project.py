@@ -105,7 +105,23 @@ for key, value in medical_records.items():
     #print(key,value['Age'])
     print("{} is a {} year old {} {} with a BMI of {} and a insurance cost of ${}0".format(key, value['Age'], value['Sex'], value['Smoker'], value['BMI'], value['Insurance_cost']))
 
+print("\n--------------------- EXTRA CREDIT ---------------------")
 # Extra Credit: Create a function called update_medical_records() that takes in the name of an individual
 # as well as their medical data, and then updates the medical_records dictionary accordingly.
 
+def update_medical_records(name, age=-1, sex="", smoker="", bmi=-1, ins_cost=-1):
+    if age > -1:
+        medical_records[name]["Age"] = age
+    if sex != "":
+        medical_records[name]["Sex"] = sex
+    if smoker != "":
+        medical_records[name]["Smoker"] = smoker
+    if bmi > -1:
+        medical_records[name]["BMI"] = bmi
+    if ins_cost > -1:
+        medical_records[name]["Insurance_cost"] = ins_cost
 
+# Update Marina's bmi to 45
+update_medical_records("Marina", bmi=45)
+
+print("Marina's updated bmi should be 45: {}".format(medical_records["Marina"]["BMI"]))
